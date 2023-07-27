@@ -33,9 +33,9 @@ public class docPdfController {
         return docpdfService.getPdf(id);
     }
 
-    @DeleteMapping
-    public String removePdf(Integer id){
+    @DeleteMapping("/delete/{id}")
+    public String removePdf(@PathVariable Integer id) {
         docpdfService.removePdf(id);
-        return "Pdf {id} is deleted";
+        return "Pdf " + id + " is deleted";
     }
 }
